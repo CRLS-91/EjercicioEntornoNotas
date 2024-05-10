@@ -47,6 +47,20 @@ public class Alumno {
 	public void setRegistros(ArrayList<Registro> registros) {
 		this.registros = registros;
 	}
+	
+	public double calcularMedia() {
+	    if (registros.isEmpty()) {
+	        return 0.0; // Si no hay registros, la media es 0.
+	    }
+
+	    double sumaNotas = 0;
+	    for (Registro registro : registros) {
+	        sumaNotas += registro.getNota();
+	    }
+
+	    return sumaNotas / registros.size();
+	}
+	
 }
 
 
